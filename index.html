@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Review Board介绍</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="reveal.js/css/reveal.min.css" rel="stylesheet"><link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme"><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet"><script type="text/javascript">document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h2>Review Board介绍</h2><p><small></small></p></section><section id="_代码审查"><h2>代码审查</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Review Board 已经改变了代码评审的方式，其可以强迫高质量的代码标准和风格，并可以成为程序员编程的指导者。
+当你访问search.yahoo.com 时，其代码都是使用 Review board工具Review过的。</p></div></blockquote><div class="attribution">&#8212; Yahoo! Web Search</div></div>
+<aside class="notes"><div class="paragraph"><p>雅虎搜索使用Review Board作为他们的代码审查工具。</p></div></aside></section>
+<section><section id="_review_board功能概览"><h2>Review Board功能概览</h2><div class="paragraph"><p>是一套用python编写的用于代码审查的Web程序，支持以下的浏览器：</p></div><div class="ulist"><ul><li><p>Firefox 3.0+</p></li><li><p>Internet Explorer 9+</p></li><li><p>Google Chrome</p></li></ul></div></section><section id="_任务列表" data-background="green"><h2>任务列表</h2><div class="imageblock" style=""><div class="content"><img src="img/task-list.png" alt="审查任务列表"></div></div>
+<aside class="notes"><div class="paragraph"><p>这里能看到所有的任务</p></div></aside></section><section id="_文件比较" data-background="green"><h2>文件比较</h2><div class="imageblock" style=""><div class="content"><img src="img/diff.png" alt="文件比较"></div></div></section><section id="_提交注释" data-background="green"><h2>提交注释</h2><div class="imageblock" style=""><div class="content"><img src="img/comment.png" alt="提交注释"></div></div></section><section id="_issue汇总" data-background="green"><h2>Issue汇总</h2><div class="imageblock" style=""><div class="content"><img src="img/issue-summary.png" alt="Issue汇总"></div></div></section><section id="_历史记录" data-background="green"><h2>历史记录</h2><div class="imageblock" style=""><div class="content"><img src="img/history.png" alt="历史记录"></div></div></section></section>
+<section><section id="_代码评审的两种类型"><h2>代码评审的两种类型</h2><div class="ulist"><ul><li class="fragment"><p>Pre-commit review</p></li><li class="fragment"><p>Post-commit review</p></li></ul></div></section><section id="_pre_commit_review" data-background="green"><h2>Pre-commit review</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>在代码提交到代码库之前审查。先往Review Board里上传一个diff文件，这样审查者可用对其进行评论，一旦批准，代码会被提交到代码库中。</p></div></blockquote></div></section><section id="_post_commit_review" data-background="green"><h2>Post-commit review</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>代码先提交到代码库中，在某个时间点进行代码审查。发现的问题修改后需要重新提交。</p></div></blockquote></div></section><section id="_优缺点比较" data-background="green"><h2>优缺点比较</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>pre-commit 的好处是在代码入库前就能发现错误，从而避免引起线上产品的问题。缺点就是导致开发时间变长，尤其是在项目紧急的时候比较难贯彻执行。</p></div></blockquote></div></section></section>
+<section id="_pre_commit_review的流程"><h2>pre-commit review的流程</h2><div class="olist arabic"><ol class="arabic"><li><p>对已修改的代码创建一个review请求，上传diff文件,发布这个请求</p></li><li><p>等待评审人查看并给出反馈</p></li><li><p>如果评审人提出改进建议，修改本地代码并重新生成diff文件并上传，说明改变的内容，重新发布，跳到第2步</p></li><li><p>如果评审人执行了"Ship it"，那么就提交代码到仓库，关闭并提交这个请求</p></li></ol></div></section>
+<section id="_demo"><h2>DEMO</h2></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.min.js"></script><script type="text/javascript">// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, blond, default, moon, night, serif, simple, sky, solarized)
+  theme: Reveal.getQueryHash().theme || 'default',
+  // Transition style (e.g., default, cube, page, concave, zoom, linear, fade, none)
+  transition: Reveal.getQueryHash().transition || 'default',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., default, none, slide, concave, convex, zoom)
+  backgroundTransition: 'default',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
